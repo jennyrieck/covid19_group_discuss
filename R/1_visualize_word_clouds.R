@@ -56,7 +56,7 @@ par(mar=rep(0, 4))
 plot.new()
 
 text(x=0.5, y=0.5, plot.title,cex = 1.5)
-wordcloud(words = full.word.cloud.mat$word, freq = full.word.cloud.mat$freq, min.freq = 4,           
+wordcloud(words = full.word.cloud.mat$word, freq = full.word.cloud.mat$freq, min.freq = 3,           
           max.words=300, random.order=FALSE, rot.per=0, scale=c(3,0.25),           
           colors=brewer.pal(8, "Dark2"))
 dev.off()
