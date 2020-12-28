@@ -16,4 +16,4 @@ The word clouds below illustrates the most common vulnerable population demograp
   <img src="https://github.com/jennyrieck/covid19_group_discuss/blob/main/plots/wordcloud_words_Ways.in.which.you.were.personally.impacted.png?raw=true" width="400" /> 
 </p>
 
-The most common traits across discussion groups were that they included racialized individuals and those who were gender violence survivors. The most common words used when discussing the personal impact of COVID-19 were: "feel", "family", and "lose".
+The most common traits across discussion groups were that they included racialized individuals, low income/precariously employed/underemployed/unemployed individuals, and women. The most common words used when discussing the personal impact of COVID-19 were: "feel", "family", and "lose".
