@@ -5,6 +5,7 @@
 library(textnets)
 
 ## Download the latest version of the group discussion results from opendatatoronto
+
 download.file("https://ckan0.cf.opendata.inter.prod-toronto.ca/download_resource/55829124-3d8d-4dfa-9102-40911837e6d7", 
               "../data/spt-group-discussion-results.csv")
 
@@ -55,9 +56,11 @@ words.to.keep<- words.to.keep[(nchar(words.to.keep) >= 3)]
 ## Remove words that don't begin with a letter (i.e., numbers)
 words.to.keep<-grep('^[[:alpha:]]',words.to.keep,value = T)
 
-## Other common words to remove
-other.words.to.remove<-c("none", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
-                         "either", "whether", "thing", "something", "also", "moreover", "since")
+## Other stopwords lists to remove (stopwords-iso from stopwords package)
+other.words.to.remove<-get_stopwords('en', 'stopwords-iso')$word
+  
+  #c("none", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+  #                       "either", "whether", "thing", "something", "also", "moreover", "since")
 words.to.keep<-words.to.keep[!words.to.keep %in% other.words.to.remove]
 
 ### reformat data with only the lemma we want
@@ -76,7 +79,7 @@ grpdisc.word.counts.by.id<-as.data.frame.matrix(table(grpdisc.word.counts.cut$Re
 ###############################################
 ###### Final format and save both count matrices
 
-### Some focus groups did not provide answers for all questions, 
+### Some focus gro'ups did not provide answers for all questions, 
 ### so we must find the groups common between our demographics an dour word counts
 
 X.demogs<-as.matrix(demogs.counts.out[match( rownames(grpdisc.word.counts.by.id),rownames(demogs.counts.out)),])
