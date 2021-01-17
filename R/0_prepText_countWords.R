@@ -1,8 +1,10 @@
 #### LOAD PACKAGES
 #library(devtools)
 ### textnets by Christopher Bail for prepping text input and coutning lemma frequency
-#install_github("cbail/textnets", force=TRUE)
+#devtools::install_github("cbail/textnets")
 library(textnets)
+library(tidytext)
+library(reshape2)
 
 ## Download the latest version of the group discussion results from opendatatoronto
 
@@ -73,13 +75,17 @@ for(w in words.to.keep){
 grpdisc.word.counts.cut<-grpdisc.word.counts.all[grpdisc.word.counts.all$keep==T,]
 
 ### Reshape the words counts so it's focus group ids by word counts
-grpdisc.word.counts.by.id<-as.data.frame.matrix(table(grpdisc.word.counts.cut$Respondent.ID, grpdisc.word.counts.cut$lemma))
+
+grpdisc.word.counts.by.id<-dcast(grpdisc.word.counts.cut, Respondent.ID~lemma,value.var = "count")
+grpdisc.word.counts.by.id[is.na(grpdisc.word.counts.by.id)]<-0
+
+##grpdisc.word.counts.by.id<-as.data.frame.matrix(table(grpdisc.word.counts.cut$Respondent.ID, grpdisc.word.counts.cut$lemma))
 
 
 ###############################################
 ###### Final format and save both count matrices
 
-### Some focus gro'ups did not provide answers for all questions, 
+### Some focus groups did not provide answers for all questions, 
 ### so we must find the groups common between our demographics an dour word counts
 
 X.demogs<-as.matrix(demogs.counts.out[match( rownames(grpdisc.word.counts.by.id),rownames(demogs.counts.out)),])
