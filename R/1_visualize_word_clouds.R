@@ -38,6 +38,11 @@ dev.off()
 ## force a new paragraph for title after 90 characters
 ##gsub('(.{1,90})(\\s|$)', '\\1\n', s)
 
+### To examine common words across all groups, word counts are binarized, as to not overweight 
+### words used in high frequency by only one group:
+Y.words[Y.words>0]<-1
+
+### Count word frequency across all groups
 full.word.cloud.mat<-data.frame(word = colnames(Y.words),freq=colSums(Y.words))
 set.seed(1234) # for reproducibility 
 
