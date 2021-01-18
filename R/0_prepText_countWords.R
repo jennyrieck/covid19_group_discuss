@@ -77,8 +77,15 @@ grpdisc.word.counts.cut<-grpdisc.word.counts.all[grpdisc.word.counts.all$keep==T
 ### Reshape the words counts so it's focus group ids by word counts
 
 grpdisc.word.counts.by.id<-dcast(grpdisc.word.counts.cut, Respondent.ID~lemma,value.var = "count")
+### ### Set NA to 0
 grpdisc.word.counts.by.id[is.na(grpdisc.word.counts.by.id)]<-0
+### ### Set IDS to rownames and remove ID columns
+rownames(grpdisc.word.counts.by.id)<-grpdisc.word.counts.by.id$Respondent.ID
+grpdisc.word.counts.by.id<-grpdisc.word.counts.by.id[,-1]
+### ### transform values to numeric 
+##grpdisc.word.counts.by.id<-apply(grpdisc.word.counts.by.id, 2, as.numeric)
 
+##### Old code for binary counting 
 ##grpdisc.word.counts.by.id<-as.data.frame.matrix(table(grpdisc.word.counts.cut$Respondent.ID, grpdisc.word.counts.cut$lemma))
 
 
