@@ -1,6 +1,7 @@
 #### LOAD PACKAGES
 
 ### GPLS by Derek Beaton for Partial Least Squares Correspondence Analysis to jointly analyze demographic counts table and word counts table 
+#library(devtools)
 #install_github("derekbeaton/gsvd")
 #install_github("derekbeaton/GPLS",subdir = "Package",force=TRUE)
 library(GPLS)
@@ -68,7 +69,7 @@ print(plot.fi)
 dev.off()
 
 
-### Select which words to plot (top 25 words per component)
+### Select which words to plot (top 30 words per component)
 
 #contribs<-(plsca.res$v[,c(ax1, ax2)])^2
 #expected.contrib<-1/(dim(plsca.res$v)[1])*2.5
