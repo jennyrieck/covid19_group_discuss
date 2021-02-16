@@ -30,7 +30,7 @@ R was used to clean, analyze, and visualize the transcripts from these discussio
 `/R/2_plsca_analyses.R` provides code for running [Partial Least Squares Correspondence Analysis (PLSCA)](https://www.researchgate.net/publication/287797412_Partial_Least_Squares_Correspondence_Analysis_A_Framework_to_Simultaneously_Analyze_Behavioral_and_Genetic_Data/link/584da94608aeb989252641dd/download), a multivariate technique used to identify co-occurrences of vulnerable group demographics and word usage for each discussion question. This allows us to identify those words unique to different vulnerable group characteristics.
 
 # Common Impacts and Concerns Across Groups
-The word clouds below illustrate the most common words used when discussing the impacts of COVID-19 and the urgent supports needed by vulnerable groups. The size of the word indicates how frequently it was used across different discussion groups.
+The word clouds below illustrate the most common words used when discussing the impacts of COVID-19 and the urgent supports needed by vulnerable groups. The size of the word indicates how frequently it was used across different discussion groups. [Click here to explore word clouds in an interactive app](https://jennyrieck.shinyapps.io/covid19_discuss_word_cloud/)
 
 <p float="left">
   <img src="./plots/wordcloud_words_Ways.in.which.you.were.personally.impacted.png?raw=true" width="400" /> 
