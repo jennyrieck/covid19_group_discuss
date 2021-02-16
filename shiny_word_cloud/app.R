@@ -2,9 +2,9 @@ library(shiny)
 library(wordcloud2)
 library(RColorBrewer)
 
-questions <- c("Ways in which you were personally impacted" = "../data/word_counts_Ways.in.which.you.were.personally.impacted.rda",
-               "Supports and programs you were accessing prior to COVID-19" = "../data/word_counts_Supports..programs.and.services.you.were.a.rda",
-               "Urgent supports needed" = "../data/word_counts_Urgent.supports.needed.rda")
+questions <- c("Ways in which you were personally impacted" = "word_counts_Ways.in.which.you.were.personally.impacted.rda",
+               "Supports and programs you were accessing prior to COVID-19" = "word_counts_Supports..programs.and.services.you.were.a.rda",
+               "Urgent supports needed" = "word_counts_Urgent.supports.needed.rda")
 
 demogs<- c("All Groups" = "ALL", "Indigenous" = "INDIGENOUS","Black" = "BLACK","Racialized"= "RACIALIZED","Youth"= "YOUTH","Women"="WOMEN",
            "Seniors"="SENIORS","LGTBQ2S+"="LGBTQ2S.","Newcomers"="NEWCOMERS.","Persons w/ Disabilities"="DISABILITI",
